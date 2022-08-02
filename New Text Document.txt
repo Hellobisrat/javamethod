@@ -1,0 +1,121 @@
+// Task 1. Add new Products: Google Pixel 6 Pro, Motorola Moto G31, Honor X7
+
+ products.push('Google Pixel 6 Pro', 'Motorola Moto G31', 'Honor X7')
+console.log(products)
+/*PS C:\Users\bisrat\Desktop\javascript1> node exercise3.js
+hello
+[
+  'iPhone 13',          'iPhone 13 Pro',
+  'iPhone 13 Pro Max',  'iPhone 12',
+  'iPhone 12 Pro',      'OnePlus 10 Pro',
+  'OnePlus 9',          'Nokia G20',
+  'Samsung Galaxy S20', 'Samsung Galaxy S21',
+  'Samsung Galaxy S22', 'Sony Xperia 10',
+  'Xiaomi Redmi 9A',    'Google Pixel 6 Pro',
+  'Motorola Moto G31',  'Honor X7'
+]
+
+ Task 2. remove Sony Xperia 10 from the list */
+
+products.splice(11,1)
+console.log(products) 
+
+//PS C:\Users\bisrat\Desktop\javascript1> node exercise3.js
+[
+  'iPhone 13',
+  'iPhone 13 Pro',
+  'iPhone 13 Pro Max',
+  'iPhone 12',
+  'iPhone 12 Pro',
+  'OnePlus 10 Pro',
+  'OnePlus 9',
+  'Nokia G20',
+  'Samsung Galaxy S20',
+  'Samsung Galaxy S21',
+  'Samsung Galaxy S22',
+  'Xiaomi Redmi 9A'
+]
+
+
+// Task 3. list the products with "Galaxy" in their names
+const filtered =products.filter(value=> value.match('Galaxy'))
+console.log(filtered) 
+
+//PS C:\Users\bisrat\Desktop\javascript1> node exercise3.js
+//[ 'Samsung Galaxy S20', 'Samsung Galaxy S21', 'Samsung Galaxy S22' ]
+
+
+// Task 4. Add Google Pixel 6 Pro, OnePlus 10 Pro, iPhone 13 Pro Max to favorites
+
+favorites.push('Google Pixel 6 Pro', 'OnePlus 10 Pro', 'iPhone 13 Pro Max')
+console.log(favorites)
+
+PS C:\Users\bisrat\Desktop\javascript1> node exercise3.js
+[ 'Google Pixel 6 Pro', 'OnePlus 10 Pro', 'iPhone 13 Pro Max' ]
+
+// Task 5. remove OnePlus 10 Pro from favorites
+
+favorites.splice(1,1)
+['OnePlus 10 Pro']
+console.log(favorites)
+VM1438:1 (2) ['Google Pixel 6 Pro', 'iPhone 13 Pro Max']
+
+// Task 6. Calculate and print the number of products that have "Pro" in their names
+// Try to implement this in two ways. 1. using reduce 2. using filter and length
+
+filtererd = (products.filter(value =>value.match('Pro'))).length
+console.log(filtererd)
+
+//PS C:\Users\bisrat\Desktop\javascript1> node exercise3.js
+//4
+
+// Task 7. Print an array that has either iOS or Android for each product based on the name
+
+//prooductitem = products.map(values => { if (values===products.filter(values=>values.match('iPhone')))
+//{ return "IOS"} 
+//else { return " ANDROID" }})
+//console.log(prooductitem)
+
+// Task 8. Print an array with the count of words for each product. Numbers could be regarded as words
+// the resulting array could look sth like this [2, 3, 4, 2, 2, 3, 3, 2, 2, 3, 3, 3, 2, 2...]
+const count = products.reduce((tally,values) => {tally[values] =
+(tally[values] || 0)+1; return tally},[])
+console.log(count)
+
+/*PS C:\Users\bisrat\Desktop\javascript1> node exercise3.js
+[
+  'iPhone 13': 1,
+  'iPhone 13 Pro': 1,
+  'iPhone 13 Pro Max': 1,
+  'iPhone 12': 1,
+  'iPhone 12 Pro': 1,
+  'OnePlus 10 Pro': 1,
+  'OnePlus 9': 1,
+  'Nokia G20': 1,
+  'Samsung Galaxy S20': 1,
+  'Samsung Galaxy S21': 1,
+  'Samsung Galaxy S22': 1,
+  'Sony Xperia 10': 1,
+  'Xiaomi Redmi 9A': 1
+]*/
+
+// Task 9. Print only the products that end with "Pro"
+ proproducts =products.filter(values=>values.match('Pro'))
+ console.log(proproducts)
+/*PS C:\Users\bisrat\Desktop\javascript1> node exercise3.js
+[
+  'iPhone 13 Pro',
+  'iPhone 13 Pro Max',
+  'iPhone 12 Pro',
+  'OnePlus 10 Pro'
+]*/
+//Task 11. Check if all the items in favorites are iPhones (have "iPhone" in the name). Print the boolean output.
+const checkevery = favorites.every(values => values =='iphone')
+console.log(checkevery)
+/*PS C:\Users\bisrat\Desktop\javascript1> node exercise3.js
+true */
+// Task 12. Check if any of the items in favorites contain the number 12 or 13. Print the boolean output.
+const checksome = favorites.some(values => values =='12'|| values =='13')
+console.log(checksome)
+/* PS C:\Users\bisrat\Desktop\javascript1> node exercise3.js
+false */
